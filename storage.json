@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.34.44.8038",
+      "templateHash": "12675946872666221031"
+    }
+  },
+  "parameters": {
+    "environment": {
+      "type": "string",
+      "defaultValue": "dev",
+      "allowedValues": [
+        "prod",
+        "dev"
+      ],
+      "metadata": {
+        "description": "Specify the environment for the deployment. Allowed values are: prod, dev, test."
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2023-01-01",
+      "name": "jsvtorageaccount",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "[if(equals(parameters('environment'), 'dev'), 'Standard_LRS', 'Standard_GRS')]"
+      },
+      "kind": "StorageV2",
+      "metadata": {
+        "description": "Specify the name of the storage account."
+      }
+    }
+  ]
+}
