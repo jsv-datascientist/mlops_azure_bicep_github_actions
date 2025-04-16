@@ -34,7 +34,7 @@
  #create the storage
  az deployment group create --resource-group dev --template-file ./storage.bicep
  ```
- ![alt text](storageCreation.png)
+ ![alt text](images/storageCreation.png)
 
  Bicep is working with the Azure Resouce Manager(ARM) but not replacing it.
  We can create the json file from the bicep file.
@@ -45,12 +45,11 @@
 ```
  The above command will create the storage.json
 
- ![alt text](storageJson.png)
-
- # How to add the github actions 
+ ![alt text](images/storageJson.png)
 
 
-# Deply using the Azure DEvops 
+
+# Deploy using the Azure Devops 
 Project Setting -> Service Connections -> New 
 ![alt text](images/serviceConnection.png)
 
@@ -65,7 +64,8 @@ Using the assistance we have added the script
 ![alt text](images/pipeline4.png)
 Click on the job and vaidate the service connection
 
-![alt text](image.png)
+![alt text](images/pipeline5.png)
+
 
 
 # Steps to create the pipeline in Azure DevOps
